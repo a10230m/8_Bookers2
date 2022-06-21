@@ -5,7 +5,7 @@
      <h2>User info</h2>
      <% if @user.errors.any? %>
      <div class="alert">
-         <%= @user.errors.count %>件のエラーが発生しました
+         <%= @user.errors.count %>errors have occurred.
          <ul>
            <% @user.errors.full_messages.each do |message| %>
            <li><%= message %></li>

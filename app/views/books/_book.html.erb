@@ -1,4 +1,4 @@
- <br>
+
  <h2>User info</h2>
  <%= image_tag user.get_profile_image(100,100) %>
 
@@ -16,16 +16,15 @@
     </tr>
    </tbody>
   </table>
- <% end %>
   <div class="row">
    <%= link_to" edit", edit_user_path(user), class: "btn btn-outline-secondary btn-block" %>
   </div><br>
+  <% end %>
 
   <h2>New book</h2>
-  <%= form_with model: book do |f| %>
    <% if book.errors.any? %>
     <div class="alert">
-     <%= book.errors.count %>件のエラーが発生しました
+     <%= book.errors.count %>errors have occurred.
       <ul>
         <% book.errors.full_messages.each do |message| %>
          <li><%= message %></li>
@@ -35,6 +34,7 @@
     <% end %>
 
 
+    <%= form_with model: book do |f| %>
     <div class="field">
      <label for="book_title">Title</label>
      <br>
@@ -50,4 +50,4 @@
     <div class="actions"><br>
     <%= f.submit "Create Book", class: "btn btn-success" %>
     </div>
-   <% end %>
+    <% end %>
